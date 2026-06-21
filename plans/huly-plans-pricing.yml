@@ -1,0 +1,242 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Huly
+providerId: huly
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Project Management
+- Collaboration
+- Open Source
+- Productivity
+- SDK
+- Plans
+description: >-
+  Huly is available two ways. The open-source platform is free to self-host
+  under the Eclipse Public License 2.0 (you pay only for your own
+  infrastructure). Managed Huly Cloud is offered in usage-tiered workspace
+  plans - Common (free), Rare, Epic, and Legendary - that scale storage and
+  audio/video traffic while keeping users and Huly Objects unlimited, plus a
+  custom Enterprise plan. AI feature inclusions per tier were not finalized
+  on the pricing page at capture time and are marked as such.
+notes: >-
+  Prices reflect the Huly Cloud pricing page at the time of capture and are
+  per workspace per month. AI feature availability per tier was listed as
+  TBD. Verify current tiers, limits, and AI inclusions on the Huly pricing
+  page during reconciliation.
+sources:
+- https://huly.io/pricing
+- https://huly.io/
+- https://github.com/hcengineering/platform
+plans:
+- id: huly-open-source
+  name: Open Source (Self-Hosted)
+  type: free
+  description: >-
+    Full Huly platform, free to self-host under the Eclipse Public License
+    2.0. No license fee; you operate and pay for your own infrastructure.
+  entries:
+  - label: Self-Hosted License
+    name: self_hosted
+    type: free
+    metric: license
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0 (self-hosted; you run your own infrastructure)
+    userMultiplied: false
+  elements:
+  - name: Tracker
+  - name: Documents
+  - name: Chat
+  - name: Virtual Office
+  - name: Team Planner
+  - name: GitHub Sync
+  - name: Platform SDK Access
+- id: huly-cloud-common
+  name: Common
+  type: usage
+  description: >-
+    Free Huly Cloud workspace tier with unlimited users and Huly Objects.
+  entries:
+  - label: Workspace
+    name: common_workspace
+    type: flat
+    metric: workspace
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0 per month
+    userMultiplied: false
+  - label: Storage
+    name: common_storage
+    type: flat
+    metric: gigabytes
+    limit: 10
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 10GB storage per workspace included
+    userMultiplied: false
+  - label: Audio/Video Traffic
+    name: common_av_traffic
+    type: flat
+    metric: gigabytes
+    limit: 10
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 10GB video/audio traffic included
+    userMultiplied: false
+  elements:
+  - name: Unlimited Users
+  - name: Unlimited Huly Objects
+  - name: AI Features (TBD)
+- id: huly-cloud-rare
+  name: Rare
+  type: usage
+  description: >-
+    Paid Huly Cloud workspace tier with expanded storage and traffic.
+  entries:
+  - label: Workspace
+    name: rare_workspace
+    type: flat
+    metric: workspace
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $19.99 per month
+    userMultiplied: false
+  - label: Storage
+    name: rare_storage
+    type: flat
+    metric: gigabytes
+    limit: 100
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 100GB storage included
+    userMultiplied: false
+  - label: Audio/Video Traffic
+    name: rare_av_traffic
+    type: flat
+    metric: gigabytes
+    limit: 100
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 100GB video/audio traffic included
+    userMultiplied: false
+  elements:
+  - name: Unlimited Users
+  - name: Unlimited Huly Objects
+  - name: AI Features (TBD)
+- id: huly-cloud-epic
+  name: Epic
+  type: usage
+  description: >-
+    Higher-volume Huly Cloud workspace tier.
+  entries:
+  - label: Workspace
+    name: epic_workspace
+    type: flat
+    metric: workspace
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $99.99 per month
+    userMultiplied: false
+  - label: Storage
+    name: epic_storage
+    type: flat
+    metric: gigabytes
+    limit: 1000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 1TB storage included
+    userMultiplied: false
+  - label: Audio/Video Traffic
+    name: epic_av_traffic
+    type: flat
+    metric: gigabytes
+    limit: 500
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 500GB video/audio traffic included
+    userMultiplied: false
+  elements:
+  - name: Unlimited Users
+  - name: Unlimited Huly Objects
+  - name: AI Features (TBD)
+- id: huly-cloud-legendary
+  name: Legendary
+  type: usage
+  description: >-
+    Highest published Huly Cloud workspace tier.
+  entries:
+  - label: Workspace
+    name: legendary_workspace
+    type: flat
+    metric: workspace
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $399.99 per month
+    userMultiplied: false
+  - label: Storage
+    name: legendary_storage
+    type: flat
+    metric: gigabytes
+    limit: 10000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 10TB storage included
+    userMultiplied: false
+  - label: Audio/Video Traffic
+    name: legendary_av_traffic
+    type: flat
+    metric: gigabytes
+    limit: 2000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 2TB video/audio traffic included
+    userMultiplied: false
+  elements:
+  - name: Unlimited Users
+  - name: Unlimited Huly Objects
+  - name: AI Features (TBD)
+- id: huly-enterprise
+  name: Enterprise (Custom)
+  type: enterprise
+  description: >-
+    Custom plan for enterprise needs with tailored features, storage, and
+    support. Contact Huly.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Custom Features
+  - name: Custom Storage
+  - name: Dedicated Support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

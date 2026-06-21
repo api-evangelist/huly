@@ -1,0 +1,225 @@
+{
+  "info": {
+    "_postman_id": "a7e1f0c2-4d6b-4a9e-8c11-huly0platform01",
+    "name": "Huly Platform API",
+    "description": "Huly exposes programmatic access through the Node.js SDK @hcengineering/api-client rather than a documented public HTTP REST API with stable endpoint paths. The SDK connects to the platform transactor over WebSocket (connect) or via a REST client (connectRest), authenticating with email/password or a token. The items below document the supported SDK operations; they are not fixed public REST endpoints. No fabricated request URLs are included.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Connection",
+      "description": "SDK connection entry points.",
+      "item": [
+        {
+          "name": "connect (WebSocket transactor client)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: connect(url, { workspace, email, password } | { workspace, token }). Establishes a persistent WebSocket connection to the Huly Platform transactor (e.g. wss://<host>/transactor). This is an SDK transactor protocol, not a documented public REST endpoint."
+          }
+        },
+        {
+          "name": "connectRest (REST client)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{accountUrl}}",
+              "host": [
+                "{{accountUrl}}"
+              ]
+            },
+            "description": "SDK: connectRest(url, { workspace, email, password } | { workspace, token }). Uses standard HTTP requests via the SDK. No fixed public REST endpoint paths/schemas are published by Huly."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fetch",
+      "description": "Document read operations exposed by the SDK.",
+      "item": [
+        {
+          "name": "findOne - Retrieve a single document",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.findOne(_class, query, options). Returns the first document matching the query. Invoked through the SDK, not via a public REST path."
+          }
+        },
+        {
+          "name": "findAll - Retrieve multiple documents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.findAll(_class, query, options). Returns documents with filtering, sorting, and pagination. Invoked through the SDK."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "description": "Document write operations exposed by the SDK.",
+      "item": [
+        {
+          "name": "createDoc - Create a document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.createDoc(_class, space, attributes). Creates a new document in the specified space. Invoked through the SDK."
+          }
+        },
+        {
+          "name": "updateDoc - Update a document",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.updateDoc(_class, space, objectId, operations). Modifies an existing document. Invoked through the SDK."
+          }
+        },
+        {
+          "name": "removeDoc - Remove a document",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.removeDoc(_class, space, objectId). Deletes a document. Invoked through the SDK."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Collections",
+      "description": "Attached-document (collection) operations exposed by the SDK.",
+      "item": [
+        {
+          "name": "addCollection - Attach a document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.addCollection(...). Creates an attached (collection) document. Invoked through the SDK."
+          }
+        },
+        {
+          "name": "updateCollection - Update an attached document",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.updateCollection(...). Modifies an attached document. Invoked through the SDK."
+          }
+        },
+        {
+          "name": "removeCollection - Remove an attached document",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.removeCollection(...). Removes an attached document. Invoked through the SDK."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mixins",
+      "description": "Mixin operations exposed by the SDK.",
+      "item": [
+        {
+          "name": "createMixin - Add a mixin to a document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.createMixin(...). Adds a mixin to an existing document. Invoked through the SDK."
+          }
+        },
+        {
+          "name": "updateMixin - Update a mixin",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{transactorUrl}}",
+              "host": [
+                "{{transactorUrl}}"
+              ]
+            },
+            "description": "SDK: client.updateMixin(...). Modifies an existing mixin on a document. Invoked through the SDK."
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "transactorUrl",
+      "value": "wss://your-huly-host/transactor",
+      "description": "Platform transactor WebSocket URL for your Huly deployment (used by the SDK)."
+    },
+    {
+      "key": "accountUrl",
+      "value": "https://your-huly-host/account",
+      "description": "Account service URL for your Huly deployment (used by the SDK for auth)."
+    },
+    {
+      "key": "hulyToken",
+      "value": "",
+      "description": "Auth token obtained from the Huly account service."
+    }
+  ]
+}

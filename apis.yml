@@ -1,0 +1,126 @@
+aid: huly
+url: https://raw.githubusercontent.com/api-evangelist/huly/refs/heads/main/apis.yml
+name: Huly
+kind: company
+description: Huly is an open-source, all-in-one project management and team collaboration
+  platform (an alternative to Linear, Jira, Slack, and Notion) built around modules
+  like Tracker and Documents. Programmatic access is delivered primarily as a Node.js
+  SDK (@hcengineering/api-client) that connects to the platform transactor over
+  WebSocket or REST, rather than a broad public HTTP API. Huly is available as free,
+  self-hostable open source (github.com/hcengineering) and as managed Huly Cloud.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Project Management
+- Collaboration
+- Open Source
+- Productivity
+- SDK
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: huly:huly-platform-sdk
+  name: Huly Platform SDK
+  tags:
+  - SDK
+  - Platform
+  - WebSocket
+  - REST
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md
+  baseURL: https://github.com/hcengineering/huly.core
+  properties:
+  - url: https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md
+    type: Documentation
+  - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
+    type: APIReference
+  - url: openapi/huly-openapi.yml
+    type: OpenAPI
+  description: The @hcengineering/api-client Node.js package provides typed
+    programmatic access to the Huly Platform. It exposes a WebSocket client
+    (connect) holding a persistent transactor connection and a REST client
+    (connectRest), both authenticated by email/password or token, with
+    document operations such as findOne, findAll, createDoc, updateDoc, and
+    removeDoc. There is no broadly documented public HTTP REST API with stable
+    URL paths; access is intended through this SDK.
+- aid: huly:huly-cloud
+  name: Huly Cloud
+  tags:
+  - Cloud
+  - SaaS
+  - Hosting
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://huly.io/
+  baseURL: https://huly.io/
+  properties:
+  - url: https://docs.huly.io/
+    type: Documentation
+  - url: https://docs.huly.io/getting-started/api-tools/
+    type: APIReference
+  - url: openapi/huly-openapi.yml
+    type: OpenAPI
+  description: Managed, hosted Huly offered as Huly Cloud with usage-tiered
+    workspaces (Common, Rare, Epic, Legendary, and custom Enterprise plans).
+    Cloud workspaces run the same platform and are reachable programmatically
+    through the Huly Platform SDK against the hosted account and transactor
+    services.
+- aid: huly:huly-tracker
+  name: Huly Tracker
+  tags:
+  - Issue Tracking
+  - Project Management
+  - Agile
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://huly.io/
+  baseURL: https://github.com/hcengineering/huly.core
+  properties:
+  - url: https://docs.huly.io/
+    type: Documentation
+  - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
+    type: APIReference
+  - url: openapi/huly-openapi.yml
+    type: OpenAPI
+  description: Tracker is Huly's project and issue management module (subtasks,
+    milestones, templates, custom workflows) with optional two-way GitHub
+    Issues/Projects sync. Issues, projects, and related objects are accessed
+    programmatically as platform documents through the Huly Platform SDK
+    rather than via a dedicated public REST API.
+- aid: huly:huly-documents
+  name: Huly Documents
+  tags:
+  - Documents
+  - Knowledge Management
+  - Collaboration
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://huly.io/
+  baseURL: https://github.com/hcengineering/huly.core
+  properties:
+  - url: https://docs.huly.io/
+    type: Documentation
+  - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
+    type: APIReference
+  - url: openapi/huly-openapi.yml
+    type: OpenAPI
+  description: Documents is Huly's collaborative knowledge-management module for
+    rich-text documents with code blocks and real-time editing. Document
+    content is modeled as platform markup and accessed through the Huly
+    Platform SDK's document and collaborative markup operations rather than a
+    standalone public REST API.
+common:
+- type: GitHubOrganization
+  url: https://github.com/hcengineering
+- type: LinkedIn
+  url: https://www.linkedin.com/company/hardcoreeng
+- type: Website
+  url: https://huly.io/
+- type: Documentation
+  url: https://docs.huly.io/
+- type: Plans
+  url: plans/huly-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/huly-rate-limits.yml
+- type: FinOps
+  url: finops/huly-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

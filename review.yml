@@ -1,0 +1,84 @@
+aid: huly
+name: Huly
+review:
+  question: Does Huly expose a documented public HTTP REST API with stable endpoint paths?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    Huly does expose a WebSocket transport (the platform transactor,
+    e.g. wss://<host>/transactor) used by the @hcengineering/api-client
+    SDK. However, this transport is an SDK-internal transactor protocol,
+    not a documented public WebSocket API with published channels,
+    messages, or schemas. No AsyncAPI document was authored because there
+    is no documented public event/message contract to model; doing so would
+    require fabricating channel and payload definitions.
+findings:
+  summary: |
+    Huly does not publish a documented, stable public HTTP REST API with
+    fixed endpoint paths and request/response schemas. Programmatic access
+    is delivered through the Node.js SDK @hcengineering/api-client, which
+    connects to the platform transactor over a persistent WebSocket
+    (connect) or via a REST client (connectRest), authenticating with
+    email/password or a token. The SDK is document-oriented: findOne,
+    findAll, createDoc, updateDoc, removeDoc, plus collection and mixin
+    operations over the platform data model. The official docs describe
+    "a basic API to get you started" with examples in the huly-examples
+    repository, not a versioned REST resource catalog. Huly is open source
+    (EPL-2.0, github.com/hcengineering) and self-hostable, and is also
+    offered as managed Huly Cloud. Because no stable public REST paths are
+    documented, the OpenAPI artifact declares no paths rather than
+    fabricating endpoints.
+  transports:
+    - protocol: SDK (Node.js)
+      package: '@hcengineering/api-client'
+      documented: true
+      note: Primary supported programmatic interface; wraps WebSocket and REST clients.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: Platform transactor connection used by the SDK (connect). Internal transactor protocol, not a documented public WebSocket API.
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: connectRest() REST client exists in the SDK, but no fixed public REST endpoint paths/schemas are published; access is via the SDK.
+  sdkMethodsConfirmed:
+    - connect (WebSocket client)
+    - connectRest (REST client)
+    - findOne
+    - findAll
+    - createDoc
+    - updateDoc
+    - removeDoc
+    - addCollection
+    - updateCollection
+    - removeCollection
+    - createMixin
+    - updateMixin
+sources:
+  - url: https://docs.huly.io/getting-started/api-tools/
+    type: Documentation
+    note: Describes "a basic API to get you started"; points to the huly-examples platform-api examples. No REST endpoint catalog.
+  - url: https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md
+    type: Documentation
+    note: API client README documenting connect/connectRest, auth (email/password or token), and document/collection/mixin methods.
+  - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
+    type: APIReference
+    note: Usage examples for the SDK; not a public REST reference.
+  - url: https://huly.io/pricing
+    type: Documentation
+    note: Huly Cloud tiers (Common/Rare/Epic/Legendary + custom Enterprise) with storage/traffic quotas.
+actions:
+  openapiPath: openapi/huly-openapi.yml
+  apisYmlUpdated: true
+  reason: |
+    No documented public REST surface with stable paths exists, so the
+    OpenAPI document declares paths: {} with an accurate description
+    pointing developers to the official SDK, rather than fabricating
+    endpoints. The interface is honestly classified as an SDK/platform
+    surface (WebSocket + REST clients via @hcengineering/api-client)
+    plus managed Huly Cloud.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

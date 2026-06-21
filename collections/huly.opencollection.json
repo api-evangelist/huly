@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Huly Platform API",
+    "version": "1.0",
+    "description": "Huly exposes programmatic access through the Node.js SDK @hcengineering/api-client rather than a documented public HTTP REST API with stable endpoint paths. The SDK connects to the platform transactor over WebSocket (connect) or via a REST client (connectRest), authenticating with email/password or a token, and offers document-oriented operations. The items below describe the supported SDK operations; they are not fixed public REST endpoints and intentionally carry no fabricated URLs."
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{hulyToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "connect - Open a WebSocket transactor connection",
+            "type": "doc"
+          },
+          "docs": "SDK: connect(url, { workspace, email, password } | { workspace, token }). Establishes a persistent WebSocket connection to the Huly Platform transactor. No fixed public REST path is documented."
+        },
+        {
+          "info": {
+            "name": "connectRest - Open a REST client connection",
+            "type": "doc"
+          },
+          "docs": "SDK: connectRest(url, { workspace, email, password } | { workspace, token }). Uses standard HTTP requests against the platform. No fixed public REST endpoint paths/schemas are published; access is via the SDK."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Fetch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "findOne - Retrieve a single document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.findOne(_class, query, options). Returns the first document matching the query."
+        },
+        {
+          "info": {
+            "name": "findAll - Retrieve multiple documents",
+            "type": "doc"
+          },
+          "docs": "SDK: client.findAll(_class, query, options). Returns documents with filtering, sorting, and pagination."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createDoc - Create a document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.createDoc(_class, space, attributes). Creates a new document in the specified space."
+        },
+        {
+          "info": {
+            "name": "updateDoc - Update a document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.updateDoc(_class, space, objectId, operations). Modifies an existing document."
+        },
+        {
+          "info": {
+            "name": "removeDoc - Remove a document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.removeDoc(_class, space, objectId). Deletes a document."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "addCollection - Attach a document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.addCollection(...). Creates an attached (collection) document."
+        },
+        {
+          "info": {
+            "name": "updateCollection - Update an attached document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.updateCollection(...). Modifies an attached document."
+        },
+        {
+          "info": {
+            "name": "removeCollection - Remove an attached document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.removeCollection(...). Removes an attached document."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Mixins",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createMixin - Add a mixin to a document",
+            "type": "doc"
+          },
+          "docs": "SDK: client.createMixin(...). Adds a mixin to an existing document."
+        },
+        {
+          "info": {
+            "name": "updateMixin - Update a mixin",
+            "type": "doc"
+          },
+          "docs": "SDK: client.updateMixin(...). Modifies an existing mixin on a document."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

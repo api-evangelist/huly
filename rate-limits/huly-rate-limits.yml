@@ -1,0 +1,67 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Huly
+providerId: huly
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Project Management
+- Collaboration
+- Open Source
+- Productivity
+- SDK
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Huly does not publish formal numeric API rate limits. Programmatic access
+  runs through the @hcengineering/api-client SDK against the platform
+  transactor (WebSocket) or REST client, so effective throughput is bounded
+  by the deployment's own resources. Self-hosted instances are limited only
+  by the operator's infrastructure. Huly Cloud workspaces are constrained by
+  plan quotas - primarily storage (10GB to 10TB) and audio/video traffic
+  (10GB to 2TB) per tier - rather than by documented request-per-minute
+  limits. Specific request-level throttling values are not reconciled in
+  this artifact.
+notes: >-
+  No public RPM/TPM-style limits are documented. Quotas listed reflect Huly
+  Cloud plan storage and traffic allowances. Verify any account- or
+  transactor-level limits in Huly documentation and Cloud account settings
+  during reconciliation.
+sources:
+- https://huly.io/pricing
+- https://docs.huly.io/
+- https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md
+responseCodes:
+  throttled: 429
+limits:
+- name: API Request Rate
+  scope: account
+  metric: requests
+  limit: not documented
+  notes: Huly does not publish a numeric request-per-minute API rate limit; SDK access is bounded by deployment resources.
+- name: Cloud Storage Quota
+  scope: workspace
+  metric: gigabytes
+  limit: 10GB (Common) to 10TB (Legendary)
+  notes: Per-workspace storage allowance set by Huly Cloud plan tier.
+- name: Cloud Audio/Video Traffic
+  scope: workspace
+  metric: gigabytes
+  limit: 10GB (Common) to 2TB (Legendary)
+  notes: Per-workspace video/audio traffic allowance set by Huly Cloud plan tier.
+- name: Self-Hosted Throughput
+  scope: deployment
+  metric: requests
+  limit: bounded by operator infrastructure
+  notes: Self-hosted deployments have no vendor-imposed rate limit; capacity depends on the host.
+policies:
+- name: Plan-Based Quotas
+  description: Huly Cloud constrains workspaces by storage and traffic quotas per tier rather than by published request rate limits.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After if a 429 is returned.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

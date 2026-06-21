@@ -1,0 +1,99 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Huly
+providerId: huly
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Project Management
+- Collaboration
+- Open Source
+- Productivity
+- SDK
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Huly spend. Huly has two distinct cost models. Self-hosting
+  the open-source platform (EPL-2.0) carries no license fee - cost is the
+  operator's own infrastructure (compute, storage, network, ops). Huly Cloud
+  is billed as flat per-workspace monthly subscriptions across fixed tiers
+  (Common free, Rare $19.99, Epic $99.99, Legendary $399.99) that bundle
+  storage and audio/video traffic allowances, plus a custom Enterprise plan.
+notes: >-
+  Cloud tier prices reflect the Huly pricing page at capture time and are per
+  workspace per month; AI feature inclusions were TBD. Self-hosted cost is
+  external infrastructure, not a Huly charge. Verify current tiers during
+  reconciliation.
+sources:
+- https://huly.io/pricing
+- https://huly.io/
+- https://github.com/hcengineering/platform
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Huly
+serviceCategory: Project Management and Collaboration
+billingModel:
+  pricingCategory: Subscription-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: Huly Cloud
+  ServiceCategory: Project Management and Collaboration
+  ProviderName: Huly
+  PublisherName: Huly
+  InvoiceIssuerName: Hardcore Engineering
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription-Based
+meters:
+- name: workspace_subscription
+  description: Flat monthly Huly Cloud subscription per workspace, by plan tier.
+  unit: workspace
+  aggregation: sum
+  dimensions:
+  - account
+  - plan
+- name: cloud_storage
+  description: Storage consumed against the workspace plan allowance (10GB to 10TB).
+  unit: gigabytes
+  aggregation: max
+  dimensions:
+  - account
+  - workspace
+- name: cloud_av_traffic
+  description: Audio/video traffic consumed against the workspace plan allowance (10GB to 2TB).
+  unit: gigabytes
+  aggregation: sum
+  dimensions:
+  - account
+  - workspace
+- name: self_hosted_infrastructure
+  description: Operator-borne infrastructure cost for self-hosting the open-source platform (no Huly license fee).
+  unit: hours
+  aggregation: sum
+  dimensions:
+  - deployment
+principles:
+- name: Visibility
+  description: Track which workspaces sit on which Cloud tier; for self-hosted, monitor underlying compute/storage/network spend.
+- name: Allocation
+  description: Map workspaces (and self-hosted deployments) to teams/cost centers.
+- name: Optimization
+  description: Right-size the Cloud tier to actual storage/traffic use; self-host on owned infrastructure when it is cheaper than the matching Cloud tier.
+- name: Accountability
+  description: Assign an owner per workspace or deployment and review the monthly subscription or infrastructure bill against budget.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
