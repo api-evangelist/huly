@@ -107,6 +107,8 @@ apis:
     Platform SDK's document and collaborative markup operations rather than a
     standalone public REST API.
 common:
+- type: DomainSecurity
+  url: security/huly-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/hcengineering
 - type: LinkedIn
