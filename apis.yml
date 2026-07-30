@@ -8,7 +8,19 @@ description: Huly is an open-source, all-in-one project management and team coll
   SDK (@hcengineering/api-client) that connects to the platform transactor over
   WebSocket or REST, rather than a broad public HTTP API. Huly is available as free,
   self-hostable open source (github.com/hcengineering) and as managed Huly Cloud.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/huly.png
 tags:
 - Project Management
 - Collaboration
