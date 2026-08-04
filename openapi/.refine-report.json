@@ -1,0 +1,14 @@
+{
+  "provider": "huly",
+  "sources": [
+    "huly-openapi.yml"
+  ],
+  "outputs": [],
+  "archived": [
+    "archived huly-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
