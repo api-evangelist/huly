@@ -46,7 +46,7 @@ apis:
     type: Documentation
   - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
     type: APIReference
-  - url: openapi/huly-openapi.yml
+  - url: openapi/_original/huly-openapi.yml
     type: OpenAPI
   description: The @hcengineering/api-client Node.js package provides typed
     programmatic access to the Huly Platform. It exposes a WebSocket client
@@ -69,7 +69,7 @@ apis:
     type: Documentation
   - url: https://docs.huly.io/getting-started/api-tools/
     type: APIReference
-  - url: openapi/huly-openapi.yml
+  - url: openapi/_original/huly-openapi.yml
     type: OpenAPI
   description: Managed, hosted Huly offered as Huly Cloud with usage-tiered
     workspaces (Common, Rare, Epic, Legendary, and custom Enterprise plans).
@@ -90,7 +90,7 @@ apis:
     type: Documentation
   - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
     type: APIReference
-  - url: openapi/huly-openapi.yml
+  - url: openapi/_original/huly-openapi.yml
     type: OpenAPI
   description: Tracker is Huly's project and issue management module (subtasks,
     milestones, templates, custom workflows) with optional two-way GitHub
@@ -111,7 +111,7 @@ apis:
     type: Documentation
   - url: https://github.com/hcengineering/huly-examples/tree/main/platform-api
     type: APIReference
-  - url: openapi/huly-openapi.yml
+  - url: openapi/_original/huly-openapi.yml
     type: OpenAPI
   description: Documents is Huly's collaborative knowledge-management module for
     rich-text documents with code blocks and real-time editing. Document
