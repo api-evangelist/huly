@@ -24,6 +24,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/huly.png
 tags:
 - Project Management
 - Collaboration
+- Open-Source
+- Productivity
+- SDK
+tags_raw:
+- Project Management
+- Collaboration
 - Open Source
 - Productivity
 - SDK
@@ -58,6 +64,10 @@ apis:
 - aid: huly:huly-cloud
   name: Huly Cloud
   tags:
+  - Cloud
+  - Software-as-a-Service
+  - Hosting
+  tags_raw:
   - Cloud
   - SaaS
   - Hosting
@@ -100,6 +110,10 @@ apis:
 - aid: huly:huly-documents
   name: Huly Documents
   tags:
+  - Documents
+  - Knowledge-Management
+  - Collaboration
+  tags_raw:
   - Documents
   - Knowledge Management
   - Collaboration
