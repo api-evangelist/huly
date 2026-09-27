@@ -35,7 +35,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/huly.png
 tags:
 - Project Management
 - Collaboration
-- Open-Source
+- Open Source
 - Productivity
 - SDK
 tags_raw:
@@ -44,6 +44,7 @@ tags_raw:
 - Open Source
 - Productivity
 - SDK
+- Open-Source
 created: '2026-06-21'
 modified: '2026-06-21'
 specificationVersion: '0.23'
@@ -84,7 +85,6 @@ apis:
   - Hosting
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://huly.io/
-  baseURL: https://huly.io/
   properties:
   - url: https://docs.huly.io/
     type: Documentation
@@ -122,12 +122,13 @@ apis:
   name: Huly Documents
   tags:
   - Documents
-  - Knowledge-Management
+  - Knowledge Management
   - Collaboration
   tags_raw:
   - Documents
   - Knowledge Management
   - Collaboration
+  - Knowledge-Management
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://huly.io/
   baseURL: https://github.com/hcengineering/huly.core
