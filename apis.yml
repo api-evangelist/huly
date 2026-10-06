@@ -46,7 +46,7 @@ tags_raw:
 - SDK
 - Open-Source
 created: '2026-06-21'
-modified: '2026-06-21'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: huly:huly-platform-sdk
@@ -145,6 +145,8 @@ apis:
     Platform SDK's document and collaborative markup operations rather than a
     standalone public REST API.
 common:
+- url: https://huly.io/blog
+  type: Blog
 - type: DomainSecurity
   url: security/huly-domain-security.yml
 - type: GitHubOrganization
