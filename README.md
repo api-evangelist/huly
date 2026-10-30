@@ -1,4 +1,4 @@
-# Huly (huly)
+# Huly
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,119 +66,113 @@
 
 Huly is an open-source, all-in-one project management and team collaboration platform (an alternative to Linear, Jira, Slack, and Notion) built around modules like Tracker and Documents. Programmatic access is delivered primarily as a Node.js SDK (@hcengineering/api-client) that connects to the platform transactor over WebSocket or REST, rather than a broad public HTTP API. Huly is available as free, self-hostable open source (github.com/hcengineering) and as managed Huly Cloud.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/huly/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/huly/refs/heads/main/apis.yml)
+**Areas:** Project Management · Collaboration · Open Source · Productivity · SDK
 
-## Tags
+## Huly on APIs.io
 
-- Project Management
-- Collaboration
-- Open Source
-- Productivity
-- SDK
+Everything profiled for Huly is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/huly/](https://apis.io/providers/huly/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (4)
 
-- **Created:** 2026-06-21
-- **Modified:** 2026-06-21
+- [Huly Platform SDK](https://apis.io/apis/huly/huly-platform-sdk/) — The @hcengineering/api-client Node.js package provides typed programmatic access to the Huly Platform. It exposes a WebSocket client (connect) holding a…
+- [Huly Cloud](https://apis.io/apis/huly/huly-cloud/) — Managed, hosted Huly offered as Huly Cloud with usage-tiered workspaces (Common, Rare, Epic, Legendary, and custom Enterprise plans). Cloud workspaces run…
+- [Huly Tracker](https://apis.io/apis/huly/huly-tracker/) — Tracker is Huly's project and issue management module (subtasks, milestones, templates, custom workflows) with optional two-way GitHub Issues/Projects sync.…
+- [Huly Documents](https://apis.io/apis/huly/huly-documents/) — Documents is Huly's collaborative knowledge-management module for rich-text documents with code blocks and real-time editing. Document content is modeled as…
 
-## APIs
+### Published properties
 
-### Huly Platform SDK
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The @hcengineering/api-client Node.js package provides typed programmatic access to the Huly Platform. It exposes a WebSocket client (connect) holding a persistent transactor connection and a REST client (connectRest), both authenticated by email/password or token, with document operations such as findOne, findAll, createDoc, updateDoc, and removeDoc. There is no broadly documented public HTTP REST API with stable URL paths; access is intended through this SDK.
+#### Collections (1)
 
-- **Human URL:** [https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md](https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md)
-- **Base URL:** `https://github.com/hcengineering/huly.core`
+Postman and Open Collection request collections.
 
-#### Tags
+- [Huly Platform API](https://apis.io/collections/huly/open-huly/)
 
-- SDK
-- Platform
-- WebSocket
-- REST
+#### Security (1)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://github.com/hcengineering/huly.core/blob/main/packages/api-client/README.md)
-- [API Reference](https://github.com/hcengineering/huly-examples/tree/main/platform-api)
-- [OpenAPI](openapi/huly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/huly.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/huly.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Huly Domain Security](https://apis.io/security/huly/huly-domain-security/)
 
-### Huly Cloud
+#### Plans and pricing (1)
 
-Managed, hosted Huly offered as Huly Cloud with usage-tiered workspaces (Common, Rare, Epic, Legendary, and custom Enterprise plans). Cloud workspaces run the same platform and are reachable programmatically through the Huly Platform SDK against the hosted account and transactor services.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://huly.io/](https://huly.io/)
-- **Base URL:** `https://huly.io/`
+- [Huly Plans Pricing](https://apis.io/plans/huly/huly-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Cloud
-- SaaS
-- Hosting
+Published request limits.
 
-#### Properties
+- [Huly Rate Limits](https://apis.io/rate-limits/huly/huly-rate-limits/)
 
-- [Documentation](https://docs.huly.io/)
-- [API Reference](https://docs.huly.io/getting-started/api-tools/)
-- [OpenAPI](openapi/huly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/huly.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/huly.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### Huly Tracker
+What the API costs to run, by operation.
 
-Tracker is Huly's project and issue management module (subtasks, milestones, templates, custom workflows) with optional two-way GitHub Issues/Projects sync. Issues, projects, and related objects are accessed programmatically as platform documents through the Huly Platform SDK rather than via a dedicated public REST API.
+- [Huly Finops](https://apis.io/finops/huly/huly-finops/)
 
-- **Human URL:** [https://huly.io/](https://huly.io/)
-- **Base URL:** `https://github.com/hcengineering/huly.core`
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Issue Tracking
-- Project Management
-- Agile
-
-#### Properties
-
-- [Documentation](https://docs.huly.io/)
-- [API Reference](https://github.com/hcengineering/huly-examples/tree/main/platform-api)
-- [OpenAPI](openapi/huly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/huly.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/huly.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Huly Documents
-
-Documents is Huly's collaborative knowledge-management module for rich-text documents with code blocks and real-time editing. Document content is modeled as platform markup and accessed through the Huly Platform SDK's document and collaborative markup operations rather than a standalone public REST API.
-
-- **Human URL:** [https://huly.io/](https://huly.io/)
-- **Base URL:** `https://github.com/hcengineering/huly.core`
-
-#### Tags
-
-- Documents
-- Knowledge Management
-- Collaboration
-
-#### Properties
-
-- [Documentation](https://docs.huly.io/)
-- [API Reference](https://github.com/hcengineering/huly-examples/tree/main/platform-api)
-- [OpenAPI](openapi/huly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/huly.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/huly.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/hcengineering)
-- [LinkedIn](https://www.linkedin.com/company/hardcoreeng)
 - [Website](https://huly.io/)
 - [Documentation](https://docs.huly.io/)
-- [Plans](plans/huly-plans-pricing.yml)
-- [Rate Limits](rate-limits/huly-rate-limits.yml)
-- [Fin Ops](finops/huly-finops.yml)
+- [Blog](https://huly.io/blog)
+- [GitHub](https://github.com/hcengineering)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 19.1** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 32.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 13.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/huly/](https://apis.io/providers/huly/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Huly: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/huly/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
